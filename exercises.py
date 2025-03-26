@@ -151,3 +151,49 @@ def weather_advice():
 
 # Call the function
 # weather_advice()
+
+# Exercise 5: What's the Season?
+#
+# Write a Python function named `determine_season` that figures out the season based on the entered date.
+#
+# Requirements:
+# - The function should first prompt the user to enter the month (as three characters): "Enter the month of the year (Jan - Dec):"
+# - Then, the function should prompt the user to enter the day of the month: "Enter the day of the month:"
+# - Determine the current season based on the date:
+#      - Dec 21 - Mar 19: Winter
+#      - Mar 20 - Jun 20: Spring
+#      - Jun 21 - Sep 21: Summer
+#      - Sep 22 - Dec 20: Fall
+# - Print the season for the entered date in the format: "<Mmm> <dd> is in <season>."
+#
+# Hints:
+# - Use 'in' to check if a string is in a list or tuple.
+# - Adjust the season based on the day of the month when needed.
+# - Ensure to validate input formats and handle unexpected inputs gracefully.
+
+from datetime import datetime
+def determine_season():
+    month = input("Enter the month of the year (Jan - Dec): ")
+    day = input("Enter the day of the month (1-31): ")
+    valid_month = re.match(r'^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)$', month)
+    valid_day = re.match(r'^([1-9]|[1-2][0-9]|3[0-1])$', day)
+    if valid_month and valid_day:
+        spring_start = datetime.strptime("2025-03-20", "%Y-%m-%d")
+        summer_start = datetime.strptime("2025-06-21", "%Y-%m-%d")
+        fall_start = datetime.strptime("2025-09-22", "%Y-%m-%d")
+        winter_start = datetime.strptime("2025-12-21", "%Y-%m-%d")
+        d = datetime.strptime(valid_month.group() + " " + valid_day.group() + " 2025", "%b %d %Y")
+        if d >= spring_start and d < summer_start:
+            print(f"{month} {day} is in Spring")
+        elif d >= summer_start and d < fall_start:
+            print(f"{month} {day} is in Summer")
+        elif d >= fall_start and d < winter_start:
+            print(f"{month} {day} is in Fall")
+        else:
+            print(f"{month} {day} is in Winter")
+    else:
+        print(f"Invalid date: {month} {day}")
+
+# Call the function
+determine_season()
+
