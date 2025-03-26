@@ -79,7 +79,7 @@ def check_voting_eligibility():
         print(f"{age} is not a valid age in years.")
 
 # Call the function
-# check_voting_eligibility()
+check_voting_eligibility()
 
 # Exercise 3: Calculate Dog Years
 #
@@ -112,7 +112,7 @@ def calculate_dog_years():
         print(f"{dog_age} is not a valid age in years.")
 
 # Call the function
-# calculate_dog_years()
+calculate_dog_years()
 
 # Exercise 4: Weather Advice
 #
@@ -143,7 +143,7 @@ def weather_advice():
         print("Wear light clothing")
 
 # Call the function
-# weather_advice()
+weather_advice()
 
 # Exercise 5: What's the Season?
 #
@@ -188,7 +188,7 @@ def determine_season():
         print(f"Invalid date: {month} {day}")
 
 # Call the function
-# determine_season()
+determine_season()
 
 # Exercise 6: Number Guessing Game
 #
@@ -231,4 +231,4 @@ def guess_number():
     print(f"Sorry, you failed to guess the number in five attempts. It was {target}")
 
 # Call the function
-# guess_number()
+guess_number()
