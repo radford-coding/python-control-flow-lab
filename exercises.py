@@ -38,24 +38,16 @@ print_greeting()
 # - Utilize the `in` operator to check for vowels.
 # - Ensure to provide feedback for non-alphabetical or invalid entries.
 
-import re
 def check_letter():
-    success = False
-    while not success:
-        letter = input("Please enter a letter to check its vowelology: ")
-        if len(letter) > 1:
-            print("Please enter a single letter.")
-            continue
-        valid_input = re.match(r'^[a-zA-Z]$', letter)
-        if valid_input:
-            print(f"vowel? {letter in "aeiouAEIOU"}")
-            success = True
-        else:
-            print("Please enter a letter.")
-
+    letter = input("Please enter a letter to check its vowelology: ")
+    if len(letter) == 1 and letter in "aeiouAEIOU":
+        print(f"The letter {letter} is a vowel.")
+    elif len(letter) == 1:
+        print(f"The letter {letter} is a consonant.")
+    else: print("Invalid input.")
 
 # Call the function
-# check_letter()
+check_letter()
 
 
 # Exercise 2: Old enough to vote?
@@ -74,6 +66,7 @@ def check_letter():
 # - Use `int()` to convert the input to an integer. Ensure to handle any conversion errors gracefully.
 # - Use a conditional statement to check if the age meets the minimum voting age requirement.
 
+import re
 def check_voting_eligibility():
     age = input("Please enter your age: ")
     valid_input = re.match(r'^[0-9]+$', age)
@@ -238,4 +231,4 @@ def guess_number():
     print(f"Sorry, you failed to guess the number in five attempts. It was {target}")
 
 # Call the function
-guess_number()
+# guess_number()
